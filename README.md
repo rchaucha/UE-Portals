@@ -7,8 +7,9 @@ Altough the plugin offer a teleporter portal, the main focus has been on renderi
 
 ## Installation guide
 1. Copy the repo into the "Plugins" folder of your project
-2. In project settings under "Project / Maps & Modes",change "Default Gamemode" to "PortalGameModeImpl"
-3. Under "Engine / Rendering / Lighting", enable "Support global clip plane for planar reflections"
+2. In project settings under "Engine / Rendering / Lighting", enable "Support global clip plane for planar reflections"
+3. Restart UE, and accept to build the plugin when UE asks you
+4. Under "Project / Maps & Modes",change "Default Gamemode" to "PortalGameModeImpl"
 
 A demo map is available in the content folder.
 
