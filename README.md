@@ -1,8 +1,16 @@
 # Portals plugin for Unreal Engine  
 This plugin adds customizable portals to Unreal Engine.  
 It is based on the code of [froyok](https://www.froyok.fr/blog/2019-03-creating-seamless-portals-in-unreal-engine-4/) which has been heaviliy modified.
+I have his consent and the permission of the company I developped this plugin for to publish the code.
 
 Altough the plugin offer a teleporter portal, the main focus has been on rendering effects, so the majority of the features are only aesthetics.
+
+# Installation guide
+1. Copy the repo into the "Plugins" folder of your project
+2. In project settings under "Project / Maps & Modes",change "Default Gamemode" to "PortalGameModeImpl"
+3. Under "Engine / Rendering / Lighting", enable "Support global clip plane for planar reflections"
+
+A demo map is available in the content folder.
 
 ## General idea
 Here you can see a basic application with a TeleporterPortal :
