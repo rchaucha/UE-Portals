@@ -27,7 +27,7 @@ public:
 
    // Called by a Portal actor when wanting to teleport something
    UFUNCTION(BlueprintCallable, Category = "Portal")
-      void RequestTeleportByPortal(ATeleporterPortal* portal, AActor* target_to_teleport) const;
+   void RequestTeleportByPortal(ATeleporterPortal* portal, AActor* target_to_teleport) const;
 
 private:
    // Look for directly visible portals and call their render method
@@ -40,7 +40,7 @@ private:
    // ------------------------------------- //
 
    UPROPERTY()
-      APlayerController* m_controller;
+   APlayerController* m_controller;
 
    UPortalSceneCapture* m_scene_capture_template;
 
