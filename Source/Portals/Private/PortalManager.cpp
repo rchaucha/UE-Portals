@@ -105,7 +105,7 @@ FMatrix APortalManager::GetCameraProjectionMatrix() const
    if (local_player)
    {
       FSceneViewProjectionData player_projection_data;
-      local_player->GetProjectionData(local_player->ViewportClient->Viewport, player_projection_data, 0);
+      local_player->GetProjectionData(local_player->ViewportClient->Viewport, player_projection_data, INDEX_NONE);
 
       projection_matrix = player_projection_data.ProjectionMatrix;
    }
