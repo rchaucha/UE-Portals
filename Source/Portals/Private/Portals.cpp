@@ -29,10 +29,10 @@ void FPortalsModule::SetKeybindings()
    setAxisMapping(FName(TEXT("LookUp")), EKeys::MouseY, -1.f);
 
    setAxisMapping(FName(TEXT("MoveForward")), EKeys::S, -1.f);
-   setAxisMapping(FName(TEXT("MoveForward")), EKeys::Z,  1.f);
+   setAxisMapping(FName(TEXT("MoveForward")), EKeys::W,  1.f);
 
-   setAxisMapping(FName(TEXT("MoveRight")), EKeys::Q, -1.f);
-   setAxisMapping(FName(TEXT("MoveRight")), EKeys::D, 1.f);
+   setAxisMapping(FName(TEXT("MoveRight")), EKeys::D, -1.f);
+   setAxisMapping(FName(TEXT("MoveRight")), EKeys::A, 1.f);
 
    setAxisMapping(FName(TEXT("Turn")), EKeys::MouseX, 1.f);
 
