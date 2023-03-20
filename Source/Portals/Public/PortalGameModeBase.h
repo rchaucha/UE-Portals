@@ -19,9 +19,10 @@ public:
    APortalManager* GetPortalManager() { return portal_manager; }
 
 private:
-	// A PortalManager is linked to the game mode
-	APortalManager* portal_manager;
+   // A PortalManager is linked to the game mode
+   APortalManager* portal_manager;
+   
 protected:
-	void BeginPlay() override;
+   void BeginPlay() override;
 
 };
