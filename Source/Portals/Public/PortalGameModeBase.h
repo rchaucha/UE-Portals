@@ -16,7 +16,7 @@ class PORTALS_API APortalGameModeBase : public AGameModeBase
 
 public:
    UFUNCTION(BlueprintCallable)
-		APortalManager* GetPortalManager() { return portal_manager; }
+   APortalManager* GetPortalManager() { return portal_manager; }
 
 private:
 	// A PortalManager is linked to the game mode
