@@ -100,9 +100,9 @@ void APortal::LoadMeshVertices() const
    if (!m_portal_mesh->GetStaticMesh()->GetRenderData()) return;
 
    FStaticMeshLODResources& LOD_model = m_portal_mesh->GetStaticMesh()->GetRenderData()->LODResources[0];
-   uint32 nb_vertices = LOD_model.VertexBuffers.StaticMeshVertexBuffer.GetNumVertices();
+   int32 nb_vertices = LOD_model.VertexBuffers.StaticMeshVertexBuffer.GetNumVertices();
 
-   for (uint32 vertex_index = 0; vertex_index < nb_vertices; ++vertex_index)
+   for (int32 vertex_index = 0; vertex_index < nb_vertices; ++vertex_index)
    {
       const FVector3f& local_position = LOD_model.VertexBuffers.PositionVertexBuffer.VertexPosition(vertex_index);
       const FVector world_position = m_portal_mesh->GetComponentTransform().TransformPosition(local_position);
