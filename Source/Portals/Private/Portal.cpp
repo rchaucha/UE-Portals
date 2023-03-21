@@ -105,7 +105,7 @@ void APortal::LoadMeshVertices() const
    for (int32 vertex_index = 0; vertex_index < nb_vertices; ++vertex_index)
    {
       const FVector3f& local_position = LOD_model.VertexBuffers.PositionVertexBuffer.VertexPosition(vertex_index);
-      const FVector world_position = m_portal_mesh->GetComponentTransform().TransformPosition(local_position);
+      const FVector world_position = m_portal_mesh->GetComponentTransform().TransformPosition(UE::Math::TVector<double>(local_position));
       m_vertices.Add(world_position);
 
       m_middle_point += world_position;
