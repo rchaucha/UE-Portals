@@ -23,6 +23,6 @@ private:
    APortalManager* portal_manager;
    
 protected:
-   void BeginPlay() override;
+   virtual void BeginPlay() override;
 
 };
