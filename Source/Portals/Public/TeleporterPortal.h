@@ -17,27 +17,27 @@ public:
    virtual void SetSceneCaptures() override;
 
    UFUNCTION(BlueprintCallable, Category = "|Portal")
-   bool IsPointInFrontOfPortal(FVector point) const;
+      bool IsPointInFrontOfPortal(FVector point) const;
 
    UFUNCTION(BlueprintCallable, Category = "|Portal")
-   bool IsCrossingPortal(FVector point);
+      bool IsCrossingPortal(FVector point);
 
    UFUNCTION(BlueprintCallable, Category = "|Portal")
-   void TeleportActor(AActor* actor_to_teleport);
+      void TeleportActor(AActor* actor_to_teleport);
 	
 protected:
    virtual void BeginPlay() override;
 
    UFUNCTION(BlueprintCallable)
-   void ResetLastInFront() { m_last_in_front = false; }
+      void ResetLastInFront() { m_last_in_front = false; }
 
    // ------------------------------------- //
 
    UPROPERTY(EditAnywhere, Category = "Portal", DisplayName = "Exit in front of linked portal")
-   bool m_exit_in_front = false;
+      bool m_exit_in_front = false;
 
    UPROPERTY(EditAnywhere, Category = "Portal", DisplayName = "Linked portal")
-   APortal* m_linked_portal;
+      APortal* m_linked_portal;
 
    // Used for tracking movement
    bool m_last_in_front;

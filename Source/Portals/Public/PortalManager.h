@@ -23,8 +23,7 @@ public:
    APortalManager();
 
    void Init();
-   
-   virtual void Tick(float DeltaSeconds) override;
+   void Tick(float DeltaSeconds) override;
 
    // Called by a Portal actor when wanting to teleport something
    UFUNCTION(BlueprintCallable, Category = "Portal")
@@ -46,5 +45,5 @@ private:
    UPortalSceneCapture* m_scene_capture_template;
 
 protected:
-   virtual void BeginPlay() override;
+   void BeginPlay() override;
 };

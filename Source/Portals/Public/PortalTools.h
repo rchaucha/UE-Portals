@@ -29,7 +29,7 @@ public:
    static bool isPortalVisibleToCamera(APortal* portal, USceneComponent* camera, float near_plane_distance = 0.f);
 
    UFUNCTION(BlueprintCallable)
-   static bool IsPointInsideBox(FVector point, UBoxComponent* box);
+      static bool IsPointInsideBox(FVector point, UBoxComponent* box);
 
    // Compute angle of incidence in degree
    static float ComputeIncidenceAngle(const FVector& cam_pos, const FVector& portal_mid, const FVector& portal_normal);

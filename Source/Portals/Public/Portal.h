@@ -22,13 +22,13 @@ public:
    FTextureToRender& operator=(const FTextureToRender& other) noexcept;
 
    UPROPERTY(BlueprintReadOnly)
-   const UTexture* texture;
+      const UTexture* texture;
 
    UPROPERTY(BlueprintReadOnly)
-   bool is_mirror;
+      bool is_mirror;
 
    UPROPERTY(BlueprintReadOnly)
-   float weight;
+      float weight;
 };
 
 
@@ -43,20 +43,17 @@ public:
    void SetActive(bool is_active) { m_is_active = is_active; }
 
    virtual void SetSceneCaptures() PURE_VIRTUAL(APortal::SetSceneCaptures,);
-
    TArray<UPortalSceneCapture*> GetSceneCaptures() { return m_scene_captures; }
 
    // Check if the portal has been rendered but the "parent" portal has not captured it yet
    // In that case, we want to keep its state and thus create a copy
    bool IsRendererButNotCaptured() const { return m_is_renderer_but_not_captured; }
-
    void SetIsRendererButNotCaptured(bool is_renderer_but_not_captured) { m_is_renderer_but_not_captured = is_renderer_but_not_captured; }
 
    // Get all 4 mesh vertices and compute the middle point and store them for quicker access
    void LoadMeshVertices() const;
 
    const TArray<FVector>* GetMeshVertices() const;
-
    FVector GetMiddlePoint() const { return m_middle_point; }
 
    // --------------------------- //
@@ -73,17 +70,17 @@ public:
    void UpdatePortalTexture();
 
    UFUNCTION(BlueprintCallable)
-   static int GetActivePortalDistance() { return m_ACTIVE_PORTAL_DISTANCE; }
+      static int GetActivePortalDistance() { return m_ACTIVE_PORTAL_DISTANCE; }
 
    // -------- BP events -------- //
 
    // Blueprint event that sets the material parameters to apply the textures passed as parameters
    UFUNCTION(BlueprintImplementableEvent, Category = "Portal")
-   void SetRTT(const TArray<FTextureToRender>& textures_to_render);
+      void SetRTT(const TArray<FTextureToRender>& textures_to_render);
 
    // Blueprint event that is called every tick
    UFUNCTION(BlueprintImplementableEvent, Category = "Portal")
-   void ForceTick();
+      void ForceTick();
 
 
 protected:
@@ -94,20 +91,19 @@ protected:
    static void SetDefaultSceneCaptureParameters(UPortalSceneCapture* inout_scene_capture);
 
    UFUNCTION(BlueprintCallable)
-   static bool IsPointInsideBox(FVector point, UBoxComponent* box);
+      static bool IsPointInsideBox(FVector point, UBoxComponent* box);
 
    // ------------------------------------- //
 
    UPROPERTY(VisibleAnywhere, Category = "Portal|Mesh")
-   UStaticMeshComponent* m_portal_mesh;
+      UStaticMeshComponent* m_portal_mesh;
 
    // Shortcuts to prevent loading every time, but mutable because it's just a shortcut
    mutable TArray<FVector> m_vertices;
-   
    mutable FVector m_middle_point;
 
    UPROPERTY(BlueprintReadOnly)
-   bool m_is_active;
+      bool m_is_active;
 
    // Scene captures linked to the portal. Maximum 5 supported
    TArray<UPortalSceneCapture*> m_scene_captures;
