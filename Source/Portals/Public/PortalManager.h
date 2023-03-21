@@ -23,6 +23,7 @@ public:
    APortalManager();
 
    void Init();
+   
    virtual void Tick(float DeltaSeconds) override;
 
    // Called by a Portal actor when wanting to teleport something
