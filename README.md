@@ -26,8 +26,8 @@ To start with, a demo map can be found inside Maps and contains a demonstration 
 ---
 
 ## Idea
+![image](https://user-images.githubusercontent.com/18093026/226847268-5d85562e-209d-41b8-a545-3e80d8ecc7f9.png)
 
-![](https://lh6.googleusercontent.com/_aH_SL8vD_mVbz1OW_nbgwlGbvXstrVVwre8bwe487IVP2clBwe89-jTdSx52zSsf3LTKrkcsYjH3YXDBcciq4X_yEyRQUfDLQKSgOj2CbD2Mje9jQOdxNG9n5Lpc1JOYq5HNifaMrQ=s0)
 When the player (eye) looks at the portal $P_1$ linked to $P_2$, he will see as if $P_1$ was a window to the world located behind $P_2$.  
 
 ---
@@ -58,7 +58,8 @@ These two methods can be redefined in Blueprint.
 
 #### General example
 
-![](https://lh3.googleusercontent.com/pJa0kkgFhCT8KEcpIRHkpSTxI85-1e9IiUN9ybs5aQVVcrllfXukNhfUDtr5SusJ535HVtMUFJPhGsNU4Sj0m4-rHZ15n8GSX-NjsPdiFS_v3sorqMdJtp9siCGDKjkVExiKdt56OEM=s0)
+![image](https://user-images.githubusercontent.com/18093026/226847416-0faa4c3c-caf7-4de9-8b9b-82d8d5d33e6d.png)
+
 Each visible portal (here, only $P_1$ is visible because $P_2$ is only an intermediary and will not be seen by the player) has:
 
 * At least one SceneCapture (here $SC_1$) that belongs to the portal 
@@ -70,7 +71,8 @@ In this way, the visible portals can update the position and rotation of their S
 
 #### Detailed example
 
-![](https://lh5.googleusercontent.com/N17Fsm5j1VN0FgSsvqRHKIbfh3xeox6YIwE6Pz1BJvJ8-Dqma16SRPysvSxLb02gLNMvCkJWJhOGMjvd-8y2ZtpmyCIocmluruuGh1FwXkDfqAV1mGaAxImRsHxBS8WeDRPN1yaNpDM=s0)
+![image](https://user-images.githubusercontent.com/18093026/226847490-ca75313a-0426-4eb4-b9ca-9c3273a7c514.png)
+
 Here we have a slightly more complex scene where $P_1$ is linked to $P_2$ and $P_3$ is linked to $P_4$. What the player sees in the end is shown at the bottom left of the image.
 
 Here, two portals are visible: $P_1$ and $P_3$. These two portals will each have their SC and WA.
