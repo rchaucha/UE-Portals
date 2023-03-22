@@ -34,10 +34,10 @@ protected:
    // ------------------------------------- //
 
    UPROPERTY(EditAnywhere, Category = "Portal", DisplayName = "Exit in front of linked portal")
-      bool m_exit_in_front = false;
+   bool m_exit_in_front = false;
 
    UPROPERTY(EditAnywhere, Category = "Portal", DisplayName = "Linked portal")
-      APortal* m_linked_portal;
+   APortal* m_linked_portal;
 
    // Used for tracking movement
    bool m_last_in_front;
