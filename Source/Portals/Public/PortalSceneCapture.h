@@ -39,7 +39,7 @@ public:
 
    bool IsExitInFront() const noexcept { return m_exit_in_front; }
 
-   const UTextureRenderTarget2D* GetRenderTarget() const { return m_render_target; 
+   const UTextureRenderTarget2D* GetRenderTarget() const { return m_render_target; }
    
    UTextureRenderTarget2D* GetRenderTarget() { return m_render_target; }
    
