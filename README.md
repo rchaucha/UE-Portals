@@ -1,5 +1,5 @@
 
-# Plugin : Unreal Engine 4 Portals
+# Plugin : Unreal Engine Portals
 
 ---
 
@@ -8,6 +8,8 @@ Thanks to Froyok for giving me the rights to use his work as a starting base : h
 
 ## Context
 This plugin has been developed for the study of visual properties only. Thus, although the teleportation aspect has been implemented, it is really secondary and not much work has been put into it.
+Main branch works for UE-5.1 thanks to @dirtydanisreal, and there is a dedicated branch for UE-4. 
+
 
 ## Installation
 
