@@ -16,9 +16,9 @@ class PORTALS_API APortalCharacter : public ACharacter
 	
 public:
    UFUNCTION(BlueprintCallable)
-		UCameraComponent* GetPlayerCamera() const;
+   UCameraComponent* GetPlayerCamera() const;
 
 protected:
    UPROPERTY(VisibleAnywhere, Category = "Mesh")
-		UCameraComponent* m_camera;
+   UCameraComponent* m_camera;
 };

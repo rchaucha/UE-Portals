@@ -97,15 +97,15 @@ void APortal::LoadMeshVertices() const
    if (!IsValidLowLevel()) return;
    if (!m_portal_mesh) return;
    if (!m_portal_mesh->GetStaticMesh()) return;
-   if (!m_portal_mesh->GetStaticMesh()->RenderData) return;
+   if (!m_portal_mesh->GetStaticMesh()->GetRenderData()) return;
 
-   FStaticMeshLODResources& LOD_model = m_portal_mesh->GetStaticMesh()->RenderData->LODResources[0];
-   uint32 nb_vertices = LOD_model.VertexBuffers.StaticMeshVertexBuffer.GetNumVertices();
+   FStaticMeshLODResources& LOD_model = m_portal_mesh->GetStaticMesh()->GetRenderData()->LODResources[0];
+   int32 nb_vertices = LOD_model.VertexBuffers.StaticMeshVertexBuffer.GetNumVertices();
 
-   for (uint32 vertex_index = 0; vertex_index < nb_vertices; ++vertex_index)
+   for (int32 vertex_index = 0; vertex_index < nb_vertices; ++vertex_index)
    {
-      const FVector& local_position = LOD_model.VertexBuffers.PositionVertexBuffer.VertexPosition(vertex_index);
-      const FVector world_position = m_portal_mesh->GetComponentTransform().TransformPosition(local_position);
+      const FVector3f& local_position = LOD_model.VertexBuffers.PositionVertexBuffer.VertexPosition(vertex_index);
+      const FVector world_position = m_portal_mesh->GetComponentTransform().TransformPosition(UE::Math::TVector<double>(local_position));
       m_vertices.Add(world_position);
 
       m_middle_point += world_position;
@@ -263,17 +263,16 @@ void APortal::SetDefaultSceneCaptureParameters(UPortalSceneCapture* inout_scene_
    capture_settings.bOverride_MotionBlurAmount = true;
    capture_settings.bOverride_MotionBlurMax = true;
    capture_settings.bOverride_SceneFringeIntensity = true;
-   capture_settings.bOverride_GrainIntensity = true;
+   capture_settings.bOverride_FilmGrainIntensity = true;
    capture_settings.bOverride_ScreenSpaceReflectionQuality = true;
-   capture_settings.bOverride_ScreenPercentage = true;
+   
 
    capture_settings.AmbientOcclusionQuality = 100.0f; // 100 = maximum quality
    capture_settings.MotionBlurAmount = 0.0f;   // 0 = disabled
    capture_settings.MotionBlurMax = 0.0f;   // 0 = disabled
    capture_settings.SceneFringeIntensity = 0.0f;   // 0 = disabled
-   capture_settings.GrainIntensity = 0.0f;   // 0 = disabled
+   capture_settings.FilmGrainIntensity = 0.0f;   // 0 = disabled
    capture_settings.ScreenSpaceReflectionQuality = 50.0f;  // 50 = default
-   capture_settings.ScreenPercentage = 100.0f; // 100 = as is, < 100 = upsampling (quicker), > 100 : super sampling (slower)
 }
 
 bool APortal::IsPointInsideBox(FVector point, UBoxComponent* box)
